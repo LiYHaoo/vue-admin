@@ -1,6 +1,6 @@
 <template>
   <div>
-      about
+      {{ this.$store.state.name }}
   </div>
 </template>
 

@@ -1,4 +1,5 @@
 const webpack = require('webpack')
+const path = require('path');
 
 module.exports = {
     // 部署应用包时的基本 URL
@@ -13,6 +14,10 @@ module.exports = {
     runtimeCompiler: true,
     // 生产环境是否生成 sourceMap 文件 sourceMap的详解请看末尾  
     productionSourceMap: true,
+
+    alias: {  
+        // 创建import或require的别名，一些常用的，路径长的都可以用别名
+    },
 
     // webpack 配置相关
     configureWebpack: config => {
@@ -31,9 +36,9 @@ module.exports = {
         sourceMap: false,
         // css预设器配置项
         loaderOptions: {
-            sass: {
-                prependData: '@import "./assets/css/common.scss"'
-            }
+            // sass: {
+            //     data: '@import "@/style/common.scss"'
+            // }
         },
         // 启用 CSS modules for all css / pre-processor files.
         modules: false
@@ -64,7 +69,12 @@ module.exports = {
             }
         }
     },
-    pluginOptions: { // 第三方插件配置
-        // ...
+    pluginOptions: {
+        // 'style-resources-loader': {
+        //   preProcessor: 'sass',
+        //   patterns: [
+        //     path.resolve(__dirname, '@src/style/common.scss')
+        //   ]
+        // }
     }
 }

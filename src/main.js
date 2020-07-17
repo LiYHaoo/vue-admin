@@ -5,6 +5,7 @@ import 'element-ui/lib/theme-chalk/index.css'
 import router from './router/router'
 import store from './store/store'
 //import axios from 'axios'
+//import './style/common.scss' // 全局公用样式
 
 let start = function () {
   Vue.config.productionTip = false
